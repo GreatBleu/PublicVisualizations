@@ -212,6 +212,16 @@ function structureCartesianGraphBody(visualization_id, cartesian_graph, cartesia
     //
     //
     let cartesian_graph_body_area = cartesian_graph_body.getElementsByClassName('cartesian-graph-body-area')[0];
+
+
+    //
+    //
+    console.log('bip');
+    console.log(cartesian_graph.getAttribute('width'));
+    //
+    //
+
+
     cartesian_graph_body_area.setAttribute('points', `${0},${0} ${0},${cartesian_graph.getAttribute('height') - horizontal_axes_height} ${cartesian_graph.getAttribute('width') - vertical_axes_width},${cartesian_graph.getAttribute('height') - horizontal_axes_height} ${cartesian_graph.getAttribute('width') - vertical_axes_width},${0}`);
     //
     //
@@ -638,7 +648,7 @@ function setEventListeners(visualization_id){
 
 //
 //
-console.log(document.currentScript.dataset.visualizationId);
+//console.log(document.currentScript.dataset.visualizationId);
 //
 //
 
