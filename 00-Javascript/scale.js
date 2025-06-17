@@ -595,16 +595,25 @@ function structureDateTimeHorizontalTickLabels(cartesian_graph, axes, horizontal
 
 function structureContent(visualization_id) {
 
-    const visualizations = document.getElementsByClassName('visualization');
+    //const visualizations = document.getElementsByClassName('visualization');
 
 
     //
     //
-    console.log(visualizations);
+    //console.log(visualizations);
     //
     //
 
-    const visualization = visualizations.getElementById(visualization_id);
+
+    const visualization = document.getElementById(visualization_id);
+
+
+    //
+    //
+    console.log(visualization_id);
+    console.log(visualization);
+    //
+    //
 
 
     const cartesian_graphs = visualization.getElementsByClassName('cartesian-graph');
