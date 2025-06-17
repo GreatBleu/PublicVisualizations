@@ -113,7 +113,12 @@ function structureCartesianGraph(visualization_id, cartesian_graph) {
     cartesian_graph.setAttribute('width', cartesian_graph.parentElement.offsetWidth);
 
     let vertical_axes_width = 0;
-    let vertical_axis_overlays = cartesian_graph.nextSibling.getElementsByClassName('cartesian-graph-axes-overlay')[0].getElementsByClassName('vertical-axis-overlay');
+
+
+    let vertical_axis_overlays = cartesian_graph.parentElement.children[1].getElementsByClassName('cartesian-graph-axes-overlay')[0].getElementsByClassName('vertical-axis-overlay');
+
+
+
 
     for (let i = 0; i < vertical_axis_overlays.length; i++) {
         let vertical_axis_overlay = vertical_axis_overlays[i];
@@ -132,7 +137,7 @@ function structureCartesianGraph(visualization_id, cartesian_graph) {
     };
 
     let horizontal_axes_height = 0;
-    let horizontal_axis_overlays = cartesian_graph.nextSibling.getElementsByClassName('cartesian-graph-axes-overlay')[0].getElementsByClassName('horizontal-axis-overlay');
+    let horizontal_axis_overlays = cartesian_graph.parentElement.children[1].getElementsByClassName('cartesian-graph-axes-overlay')[0].getElementsByClassName('horizontal-axis-overlay');
 
     for (let i = 0; i < horizontal_axis_overlays.length; i++) {
 
@@ -369,10 +374,10 @@ function structureAxes(cartesian_graph, axes, vertical_axes_width, horizontal_ax
     let horizontal_axes = axes.getElementsByClassName('horizontal-axis');
     let vertical_axes = axes.getElementsByClassName('vertical-axis');
     for (let i = 0; i < horizontal_axes.length; i++) {
-        structureHorizontalAxis(cartesian_graph, axes, horizontal_axes[i], vertical_axes, vertical_axes_width, cartesian_graph.nextSibling.getElementsByClassName('cartesian-graph-axes-overlay')[0].getElementsByClassName('horizontal-axis-overlay')[i], vertical_axes_width, horizontal_axes_height);
+        structureHorizontalAxis(cartesian_graph, axes, horizontal_axes[i], vertical_axes, vertical_axes_width, cartesian_graph.parentElement.children[1].getElementsByClassName('cartesian-graph-axes-overlay')[0].getElementsByClassName('horizontal-axis-overlay')[i], vertical_axes_width, horizontal_axes_height);
     };
     for (let i = 0; i < vertical_axes.length; i++) {
-        structureVerticalAxis(cartesian_graph, axes, horizontal_axes, vertical_axes[i], cartesian_graph.nextSibling.getElementsByClassName('cartesian-graph-axes-overlay')[0].getElementsByClassName('vertical-axis-overlay')[i], vertical_axes_width, horizontal_axes_height);
+        structureVerticalAxis(cartesian_graph, axes, horizontal_axes, vertical_axes[i], cartesian_graph.parentElement.children[1].getElementsByClassName('cartesian-graph-axes-overlay')[0].getElementsByClassName('vertical-axis-overlay')[i], vertical_axes_width, horizontal_axes_height);
     };
 };
 
