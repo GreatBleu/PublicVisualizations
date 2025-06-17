@@ -597,7 +597,16 @@ function structureContent(visualization_id) {
 
     const visualizations = document.getElementsByClassName('visualization');
 
-    const visualization = document.getElementById(visualization_id);
+
+    //
+    //
+    console.log(visualizations);
+    //
+    //
+
+    const visualization = visualizations.getElementById(visualization_id);
+
+
     const cartesian_graphs = visualization.getElementsByClassName('cartesian-graph');
 
     for (let i = 0; i < cartesian_graphs.length; i++) {
