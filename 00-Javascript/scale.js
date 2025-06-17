@@ -636,5 +636,11 @@ function setEventListeners(visualization_id){
 };
 
 
+//
+//
+console.log(document.currentScript.dataset.visualizationId);
+//
+//
+
 structureContent(document.currentScript.dataset.visualizationId);
 setEventListeners(document.currentScript.dataset.visualizationId);
