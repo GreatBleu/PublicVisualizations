@@ -4,6 +4,14 @@ function structureCartesianGraphOverlay(cartesian_graph, vertical_axes_width) {
 
     cartesianGraphOverlay.style.top = cartesian_graph.getBoundingClientRect().y + window.scrollY;
     cartesianGraphOverlay.style.left = cartesian_graph.getBoundingClientRect().x;
+
+    //
+    //
+    console.log('boom');
+    console.log(cartesian_graph);
+    //
+    //
+
     cartesianGraphOverlay.style.width = cartesian_graph.getAttribute('width');
 
     let cartesianGraphBodyOverlay = cartesianGraphOverlay.getElementsByClassName('cartesian-graph-body-overlay')[0];
@@ -216,8 +224,11 @@ function structureCartesianGraphBody(visualization_id, cartesian_graph, cartesia
 
     //
     //
-    console.log('bip');
-    console.log(cartesian_graph.getAttribute('width'));
+    //console.log('bip');
+    //
+    // WORKING ON GETTING THE CODE TO DEPLOY CORRECTLY - The overlays aren't scaling or positioning correctly
+    //
+    //console.log(cartesian_graph.getAttribute('width'));
     //
     //
 
@@ -620,8 +631,8 @@ function structureContent(visualization_id) {
 
     //
     //
-    console.log(visualization_id);
-    console.log(visualization);
+    //console.log(visualization_id);
+    //console.log(visualization);
     //
     //
 
