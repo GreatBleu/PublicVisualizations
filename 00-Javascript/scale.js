@@ -9,6 +9,7 @@ function structureCartesianGraphOverlay(cartesian_graph, vertical_axes_width) {
     //
     console.log('boom');
     console.log(cartesian_graph);
+    console.log(cartesian_graph.getAttribute('width'));
     //
     //
 
@@ -119,6 +120,14 @@ function structurePointAnnotationOverlayAndCallout(cartesian_graph, annotationOv
 
 function structureCartesianGraph(visualization_id, cartesian_graph) {
     cartesian_graph.setAttribute('width', cartesian_graph.parentElement.offsetWidth);
+
+    //
+    //
+    console.log('ba');
+    console.log(cartesian_graph.getAttribute('width'));
+    //
+    //
+
 
     let vertical_axes_width = 0;
 
