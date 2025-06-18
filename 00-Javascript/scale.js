@@ -4,7 +4,7 @@ function structureCartesianGraphOverlay(cartesian_graph, vertical_axes_width) {
 
     cartesianGraphOverlay.style.top = cartesian_graph.getBoundingClientRect().y + window.scrollY;
     cartesianGraphOverlay.style.left = cartesian_graph.getBoundingClientRect().x;
-    cartesianGraphOverlay.style.width = cartesian_graph.getAttribute('width');
+    cartesianGraphOverlay.style.width = 427; //cartesian_graph.getAttribute('width');
 
 
     //
