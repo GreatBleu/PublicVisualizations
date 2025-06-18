@@ -4,7 +4,7 @@ function structureCartesianGraphOverlay(cartesian_graph, vertical_axes_width) {
 
     cartesianGraphOverlay.style.top = cartesian_graph.getBoundingClientRect().y + window.scrollY;
     cartesianGraphOverlay.style.left = cartesian_graph.getBoundingClientRect().x;
-    cartesianGraphOverlay.style.width = '427px'; //cartesian_graph.getAttribute('width');
+    //cartesianGraphOverlay.style.width = '427px'; //cartesian_graph.getAttribute('width');
 
 
     //
@@ -13,7 +13,7 @@ function structureCartesianGraphOverlay(cartesian_graph, vertical_axes_width) {
     console.log('beef')
     console.log(cartesian_graph);
     console.log(cartesian_graph.getAttribute('width'));
-    console.log(cartesianGraphOverlay.style.width);
+    //console.log(cartesianGraphOverlay.style.width);
     console.log(cartesianGraphOverlay);
     //
     //
