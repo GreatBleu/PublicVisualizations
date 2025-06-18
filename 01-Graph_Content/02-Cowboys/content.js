@@ -44,7 +44,7 @@ const vi_id2 = {
             fontWeight: '700'
         },
         tb_id1: {
-            string: 'Average number of prime time games scheduled per prior year win (2016-2025 seasons)',
+            string: 'Average number of prime time games scheduled per prior year win (2016 - 2025 seasons)',
             color: 'rgb(0, 0, 0)',
             fontFamily: 'Verdana',
             textAlign: 'left',
@@ -52,7 +52,7 @@ const vi_id2 = {
             fontWeight: '300'
         },
         tb_id2: {
-            string: 'Note: prime time games include Thursday, Sunday, and Monday Night Football, and all Thanksgiving & Christmas games. International games are not counted | 2025 Week 18 prime time games are yet to be announced',
+            string: 'Note: international games are not counted as prime time | 2025 Week 18 schedule yet to be finalized',
             color: 'rgb(0, 0, 0)',
             fontFamily: 'Verdana',
             textAlign: 'left',
@@ -85,37 +85,45 @@ const vi_id2 = {
                     type: 'float',
                     chartAreaMargin: '5',
                     lowerBound: '0',
-                    upperBound: '.8',
+                    upperBound: '.85',
                     horizontalBuffer: '2',
                     verticalAxisLabelDetails: {
-                        string: 'Label',
+                        string: 'prime time games / prior year win',
+                        fontSize: '10pt',
+                        fontFamily: 'Verdana',
                         position: 'top-tick'
                     },
                     verticalTickLabelGroupDetails: {
                         vtlg_id0: {
                             vl_id0: {
-                                value: '.75',
-                                string: '.75'
+                                value: '.8',
+                                string: '.8',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             vl_id1: {
                                 value: '.6',
-                                string: '.6'
+                                string: '.6',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             vl_id2: {
-                                value: '.45',
-                                string: '.45'
-                            },
-                            vl_id3: {
-                                value: '.3',
-                                string: '.3'
+                                value: '.4',
+                                string: '.4',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             vl_id4: {
-                                value: '.15',
-                                string: '.15'
+                                value: '.2',
+                                string: '.2',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             vl_id5: {
                                 value: '0',
-                                string: '0'
+                                string: '0',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             }
                         }
                     }
@@ -125,50 +133,52 @@ const vi_id2 = {
                 ha_id0: {
                     type: 'categorical',
                     chartAreaMargin: '5',
-                    category_count: '10',
+                    category_count: '7',
                     verticalBuffer: '5',
                     horizontalTickLabelGroupDetails: {
                         htlg_id0:
                         {
                             hl_id0: {
                                 value: 'Cowboys',
-                                string: 'Cowboys'
+                                string: 'Cowboys',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id1: {
                                 value: 'Giants',
-                                string: 'Giants'
+                                string: 'Giants',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id2: {
                                 value: 'Bears',
-                                string: 'Bears'
+                                string: 'Bears',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id3: {
                                 value: 'No Thanksgiving Cowboys',
                                 string: 'Cowboys*',
-                            },
-                            hl_id4: {
-                                value: 'Broncos',
-                                string: 'Broncos'
-                            },
-                            hl_id5: {
-                                value: 'Cardinals',
-                                string: 'Cardinals'
-                            },
-                            hl_id6: {
-                                value: 'Falcons',
-                                string: 'Falcons'
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id7: {
                                 value: 'Titans',
-                                string: 'Titans'
+                                string: 'Titans',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id8: {
                                 value: 'Panthers',
-                                string: 'Panthers'
+                                string: 'Panthers',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id9: {
                                 value: 'Jaguars',
-                                string: 'Jaguars'
+                                string: 'Jaguars',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             }
                         }
                     }
@@ -184,27 +194,22 @@ const vi_id2 = {
                             strokeWidth: '1'
                         },
                         hgl_id1: {
-                            value: '.15',
+                            value: '.2',
                             stroke: 'gray',
                             strokeWidth: '1'
                         },
                         hgl_id2: {
-                            value: '.3',
+                            value: '.4',
                             stroke: 'gray',
                             strokeWidth: '1'
                         },
                         hgl_id3: {
-                            value: '.45',
-                            stroke: 'gray',
-                            strokeWidth: '1'
-                        },
-                        hgl_id4: {
                             value: '.6',
                             stroke: 'gray',
                             strokeWidth: '1'
                         },
-                        hgl_id5: {
-                            value: '.75',
+                        hgl_id4: {
+                            value: '.8',
                             stroke: 'gray',
                             strokeWidth: '1'
                         }
@@ -226,8 +231,8 @@ const vi_id2 = {
                             dashed: false
                         },
                         bar_id1: {
-                            fill: '#0B2265',
-                            stroke: '#0B2265',
+                            fill: '#D3D3D3',
+                            stroke: '#D3D3D3',
                             stroke_width: '5',
                             width_percentage: .9,
                             horizontal_value: 'Giants',
@@ -235,8 +240,8 @@ const vi_id2 = {
                             dashed: false
                         },
                         bar_id2: {
-                            fill: '#0B162A',
-                            stroke: '#0B162A',
+                            fill: '#D3D3D3',
+                            stroke: '#D3D3D3',
                             stroke_width: '5',
                             width_percentage: .9,
                             horizontal_value: 'Bears',
@@ -252,36 +257,9 @@ const vi_id2 = {
                             vertical_value: 0.591397849,
                             dashed: true
                         },
-                        bar_id4: {
-                            fill: '#FB4F14',
-                            stroke: '#FB4F14',
-                            stroke_width: '5',
-                            width_percentage: .9,
-                            horizontal_value: 'Broncos',
-                            vertical_value: 0.567567567567568,
-                            dashed: false
-                        },
-                        bar_id5: {
-                            fill: '#97233F',
-                            stroke: '#97233F',
-                            stroke_width: '5',
-                            width_percentage: .9,
-                            horizontal_value: 'Cardinals',
-                            vertical_value: 0.338028169014085,
-                            dashed: false
-                        },
-                        bar_id6: {
-                            fill: '#A71930',
-                            stroke: '#A71930',
-                            stroke_width: '5',
-                            width_percentage: .9,
-                            horizontal_value: 'Falcons',
-                            vertical_value: 0.328947368421053,
-                            dashed: false
-                        },
                         bar_id7: {
-                            fill: '#0C2340',
-                            stroke: '#0C2340',
+                            fill: '#D3D3D3',
+                            stroke: '#D3D3D3',
                             stroke_width: '5',
                             width_percentage: .9,
                             horizontal_value: 'Titans',
@@ -289,8 +267,8 @@ const vi_id2 = {
                             dashed: false
                         },
                         bar_id8: {
-                            fill: '#041E42',
-                            stroke: '#041E42',
+                            fill: '#D3D3D3',
+                            stroke: '#D3D3D3',
                             stroke_width: '5',
                             width_percentage: .9,
                             horizontal_value: 'Panthers',
@@ -298,8 +276,8 @@ const vi_id2 = {
                             dashed: false
                         },
                         bar_id9: {
-                            fill: '#101820',
-                            stroke: '#101820',
+                            fill: '#D3D3D3',
+                            stroke: '#D3D3D3',
                             stroke_width: '5',
                             width_percentage: .9,
                             horizontal_value: 'Jaguars',
@@ -312,13 +290,15 @@ const vi_id2 = {
             annotationDetails: {
                 pointAnnotationDetails: {
                     pa_id0: {
-                        string: '*Even if the Cowboys never played on Thanksgiving they would still be third among all NFL teams',
+                        string: "*If the Cowboys didn't play on Thanksgiving they would still be third among the NFL",
+                        fontSize: '10pt',
+                        fontFamily: 'Verdana',
                         verticalBounds: {
-                            lowerBound: .77,
-                            upperBound: .9
+                            lowerBound: .3,
+                            upperBound: .938
                         },
                         horizontalBounds: {
-                            lowerBound: .39,
+                            lowerBound: .65,
                             upperBound: 1
                         },
                         verticalAxis: 'va_id0',
@@ -329,7 +309,7 @@ const vi_id2 = {
                         headBuffer: 3,
                         markerRefX: 5,
                         calloutAttaches: {
-                            verticalPosition: .5,
+                            verticalPosition: .8,
                             horizontalPosition: 0
                         }
                     }

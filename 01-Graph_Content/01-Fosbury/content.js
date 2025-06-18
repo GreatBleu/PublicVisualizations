@@ -74,7 +74,7 @@ const vi_id1 = {
 
     textBoxDetails: {
         tb_id0: {
-            string: "The Six Centimeter Quantum Leap",
+            string: "The Fosbury flop looks more dramatic than the new heights it enabled",
             color: 'rgb(0, 0, 0)',
             fontFamily: 'Verdana',
             textAlign: 'left',
@@ -113,26 +113,52 @@ const vi_id1 = {
             verticalAxesDetails: {
                 va_id0: {
                     type: 'float',
-                    lowerBound: '1.5',
+                    lowerBound: '0',
                     upperBound: '2.7',
                     horizontalBuffer: '2',
                     verticalAxisLabelDetails: {
                         string: 'Meters',
+                        fontSize: '10pt',
+                        fontFamily: 'Verdana',
                         position: 'top-tick'
                     },
                     verticalTickLabelGroupDetails: {
                         vtlg_id0: {
                             vl_id0: {
                                 value: '2.5',
-                                string: '2.5'
+                                string: '2.5',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             vl_id1: {
                                 value: '2.0',
-                                string: '2.0'
+                                string: '2.0',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             vl_id2: {
                                 value: '1.5',
-                                string: '1.5'
+                                string: '1.5',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
+                            },
+                            vl_id3: {
+                                value: '1.0',
+                                string: '1.0',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
+                            },
+                            vl_id4: {
+                                value: '0.5',
+                                string: '0.5',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
+                            },
+                            vl_id5: {
+                                value: '0.0',
+                                string: '0',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             }
                         }
                     }
@@ -150,23 +176,33 @@ const vi_id1 = {
                         {
                             hl_id0: {
                                 value: '1900',
-                                string: '1900'
+                                string: '1900',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id1: {
                                 value: '1931',
-                                string: '1931'
+                                string: '1931',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id2: {
                                 value: '1962',
-                                string: '1962'
+                                string: '1962',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id3: {
                                 value: '1993',
-                                string: '1993'
+                                string: '1993',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id4: {
                                 value: '2024',
-                                string: '2024'
+                                string: '2024',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             }
                         }
                     }
@@ -178,21 +214,31 @@ const vi_id1 = {
                     verticalAxisID: 'va_id0',
                     horizontalGridLineDetails: {
                         hgl_id0: {
-                            value: '1.3',
+                            value: '0',
                             stroke: 'black',
                             strokeWidth: '1'
                         },
                         hgl_id1: {
-                            value: '1.7',
+                            value: '.5',
                             stroke: 'gray',
                             strokeWidth: '1'
                         },
                         hgl_id2: {
-                            value: '2.1',
+                            value: '1',
                             stroke: 'gray',
                             strokeWidth: '1'
                         },
                         hgl_id3: {
+                            value: '1.5',
+                            stroke: 'gray',
+                            strokeWidth: '1'
+                        },
+                        hgl_id4: {
+                            value: '2.0',
+                            stroke: 'gray',
+                            strokeWidth: '1'
+                        },
+                        hgl_id5: {
                             value: '2.5',
                             stroke: 'gray',
                             strokeWidth: '1'
@@ -207,6 +253,8 @@ const vi_id1 = {
                     horizontalAxis: 'ha_id0',
                     verticalSeries: 'series_one',
                     horizontalSeries: 'series_zero',
+                    stroke: '#000080',
+                    interpolation: 'forward_flat',
                     breakDetails: {
                         lb_id0: {
                             startingObservation: 'ob_id3',
@@ -230,6 +278,8 @@ const vi_id1 = {
                         upperBound: '1920',
                         fill: '#D3D3D3',
                         string: 'WWI',
+                        fontSize: '8pt',
+                        fontFamily: 'Verdana',
                         axisId: 'ha_id0'
                     },
                     ts_id1: {
@@ -237,22 +287,28 @@ const vi_id1 = {
                         upperBound: '1948',
                         fill: '#D3D3D3',
                         string: 'WWII',
+                        fontSize: '8pt',
+                        fontFamily: 'Verdana',
                         axisId: 'ha_id0'
                     },
                     ts_id2: {
                         lowerBound: '1968',
                         upperBound: '2024',
                         fill: '#D3D3D3',
-                        string: 'All Champions Use the Flop',
+                        string: 'Approx. 10% improvement',
+                        fontSize: '8pt',
+                        fontFamily: 'Verdana',
                         axisId: 'ha_id0'
                     }
                 },
                 pointAnnotationDetails: {
                     pa_id0: {
-                        string: "Dick Fosbury captures gold with his famous 'flop'",
+                        string: "1968: Dick Fosbury wins gold with his famous 'flop'",
+                        fontSize: '10pt',
+                        fontFamily: 'Verdana',
                         verticalBounds: {
                             lowerBound: .38,
-                            upperBound: .5
+                            upperBound: .54
                         },
                         horizontalBounds: {
                             lowerBound: .6,
@@ -263,7 +319,7 @@ const vi_id1 = {
                         horizontalValue: '1968',
                         verticalValue: 2.24,
                         tailBuffer: 3,
-                        headBuffer: 3,
+                        headBuffer: 10,
                         markerRefX: 5,
                         calloutAttaches: {
                             verticalPosition: .5,

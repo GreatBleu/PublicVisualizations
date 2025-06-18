@@ -1,23 +1,13 @@
-function structureCartesianGraphOverlay(cartesian_graph, vertical_axes_width) {
+function structureCartesianGraphOverlay(visualization_id, cartesian_graph, vertical_axes_width) {
 
     let cartesianGraphOverlay = cartesian_graph.nextElementSibling;
 
-    cartesianGraphOverlay.style.top = cartesian_graph.getBoundingClientRect().y + window.scrollY;
-    cartesianGraphOverlay.style.left = cartesian_graph.getBoundingClientRect().x;
-    //cartesianGraphOverlay.style.width = '427px'; //cartesian_graph.getAttribute('width');
-
-
-    //
-    //
-    //console.log('bam');
-    //console.log('beef')
-    //console.log(cartesian_graph);
-    //console.log(cartesian_graph.getAttribute('width'));
-    //console.log(cartesianGraphOverlay.style.width);
-    //console.log(cartesianGraphOverlay);
-    //
-    //
+    cartesianGraphOverlay.style.top = cartesian_graph.parentElement.offsetTop + 'px';
+    cartesianGraphOverlay.style.left = cartesian_graph.parentElement.offsetLeft + 'px';
     
+    
+    cartesianGraphOverlay.style.width = cartesian_graph.getAttribute('width') + 'px';
+
 
     let cartesianGraphBodyOverlay = cartesianGraphOverlay.getElementsByClassName('cartesian-graph-body-overlay')[0];
     structureCartesianGraphBodyOverlay(cartesian_graph, cartesianGraphBodyOverlay, vertical_axes_width);
@@ -26,8 +16,8 @@ function structureCartesianGraphOverlay(cartesian_graph, vertical_axes_width) {
 function structureCartesianGraphBodyOverlay(cartesian_graph, cartesianGraphBodyOverlay, vertical_axes_width) {
     let cartesian_graph_body = cartesian_graph.getElementsByClassName('cartesian-graph-body')[0];
 
-    cartesianGraphBodyOverlay.style.left = vertical_axes_width;
-    cartesianGraphBodyOverlay.style.width = cartesian_graph_body.getBoundingClientRect().width;
+    cartesianGraphBodyOverlay.style.left = vertical_axes_width + 'px';
+    cartesianGraphBodyOverlay.style.width = cartesian_graph_body.getBoundingClientRect().width + 'px';
 
     let pointAnnotationOverlays = cartesianGraphBodyOverlay.getElementsByClassName('point-annotation-overlay');
     let annotationCallouts = cartesian_graph.getElementsByClassName('annotation-callout');
@@ -70,7 +60,7 @@ function structureTimeSpanAnnotationRectangleAndCallout(cartesian_graph, annotat
     annotationRectangle.setAttribute('width', width_absolute);
     annotationRectangle.setAttribute('height', height);
 
-    annotationOverlay.style.left = (x_position_absolute + (width_absolute / 2)) - (annotationOverlay.getBoundingClientRect().width / 2);
+    annotationOverlay.style.left = (x_position_absolute + (width_absolute / 2)) - (annotationOverlay.getBoundingClientRect().width / 2) + 'px';
     annotationOverlay.style.maxWidth = width_absolute;
 };
 
@@ -84,8 +74,10 @@ function structurePointAnnotationOverlayAndCallout(cartesian_graph, annotationOv
     let left_position = (cartesian_graph_body_area.getBoundingClientRect().width * annotationOverlay.dataset.horizontalLowerBound);
     let top_position = cartesian_graph_body_area.getBoundingClientRect().height - (cartesian_graph_body_area.getBoundingClientRect().height * annotationOverlay.dataset.verticalUpperBound);
 
-    annotationOverlay.style.left = left_position;
-    annotationOverlay.style.top = top_position;
+    annotationOverlay.style.left = left_position + 'px';
+
+
+    annotationOverlay.style.top = top_position + 'px';
     annotationOverlay.style.maxWidth = cartesian_graph_body_area.getBoundingClientRect().width * (annotationOverlay.dataset.horizontalUpperBound - annotationOverlay.dataset.horizontalLowerBound);
     annotationOverlay.style.maxHeight = cartesian_graph_body_area.getBoundingClientRect().height * (annotationOverlay.dataset.verticalUpperBound - annotationOverlay.dataset.verticalLowerBound);
 
@@ -124,14 +116,6 @@ function structurePointAnnotationOverlayAndCallout(cartesian_graph, annotationOv
 
 function structureCartesianGraph(visualization_id, cartesian_graph) {
     cartesian_graph.setAttribute('width', cartesian_graph.parentElement.offsetWidth);
-
-    //
-    //
-    //console.log('ba');
-    //console.log(cartesian_graph.getAttribute('width'));
-    //
-    //
-
 
     let vertical_axes_width = 0;
 
@@ -220,7 +204,7 @@ function structureCartesianGraph(visualization_id, cartesian_graph) {
 
     //
     //
-    structureCartesianGraphOverlay(cartesian_graph, vertical_axes_width);
+    structureCartesianGraphOverlay(visualization_id, cartesian_graph, vertical_axes_width);
     //
     //
 };
@@ -233,19 +217,6 @@ function structureCartesianGraphBody(visualization_id, cartesian_graph, cartesia
     //
     //
     let cartesian_graph_body_area = cartesian_graph_body.getElementsByClassName('cartesian-graph-body-area')[0];
-
-
-    //
-    //
-    //console.log('bip');
-    //
-    // WORKING ON GETTING THE CODE TO DEPLOY CORRECTLY - The overlays aren't scaling or positioning correctly
-    //
-    //console.log(cartesian_graph.getAttribute('width'));
-    //
-    //
-
-
     cartesian_graph_body_area.setAttribute('points', `${0},${0} ${0},${cartesian_graph.getAttribute('height') - horizontal_axes_height} ${cartesian_graph.getAttribute('width') - vertical_axes_width},${cartesian_graph.getAttribute('height') - horizontal_axes_height} ${cartesian_graph.getAttribute('width') - vertical_axes_width},${0}`);
     //
     //
@@ -304,6 +275,8 @@ function structureLine(visualization_id, line, cartesian_graph, vertical_axes_wi
     };
 
 
+    let previous_vertical_position_absolute = null;
+
     for (const observation in eval(visualization_id).data.series[horizontal_series].observations) {
 
         let horizontal_position_percentage = (eval(visualization_id).data['series'][horizontal_series]['observations'][observation] - horizontal_lower_bound) / (horizontal_upper_bound - horizontal_lower_bound);
@@ -315,11 +288,18 @@ function structureLine(visualization_id, line, cartesian_graph, vertical_axes_wi
         if (path_data == '' || break_ending_points.includes(observation)) {
             path_data += `M ${horizontal_position_absolute} ${vertical_position_absolute}`
         } else {
-            path_data += `L ${horizontal_position_absolute} ${vertical_position_absolute}`
+
+            if (line.dataset.interpolation == 'linear'){
+                path_data += `L ${horizontal_position_absolute} ${vertical_position_absolute}`
+            } else if (line.dataset.interpolation == 'forward_flat') {
+                path_data += `L ${horizontal_position_absolute} ${previous_vertical_position_absolute} L ${horizontal_position_absolute} ${vertical_position_absolute}`
+            };
         };
+
+        previous_vertical_position_absolute = vertical_position_absolute;
     };
 
-    line.innerHTML = `<path d="${path_data}" fill="none" stroke="#ED1C24" style="stroke-width:4px; stroke-linejoin:round; stroke-linecap:round"/>`;
+    line.innerHTML = `<path d="${path_data}" fill="none" stroke="${line.dataset.stroke}" style="stroke-width:4px; stroke-linejoin:round; stroke-linecap:round"/>`;
 };
 
 
@@ -428,7 +408,7 @@ function structureVerticalAxis(cartesian_graph, axes, horizontal_axes, vertical_
         };
     };
 
-    vertical_axis_overlay.style.width = vertical_axis_width;
+    vertical_axis_overlay.style.width = vertical_axis_width + 'px';
 
     vertical_axis.setAttribute('transform', `translate(${vertical_axis_width}, 0)`);
 
@@ -451,30 +431,28 @@ function structureVerticalAxis(cartesian_graph, axes, horizontal_axes, vertical_
 
     let vertical_axis_label_overlay = vertical_axis_overlay.getElementsByClassName('vertical-axis-label-overlay')[0];
 
-    vertical_axis_label_overlay.style.left = vertical_axis_width;
-    vertical_axis_label_overlay.style.marginTop = -vertical_axis_label_overlay.getBoundingClientRect().height / 2;
-    vertical_axis_label_overlay.style.top = min_tick_label_top;
+    vertical_axis_label_overlay.style.left = vertical_axis_width + 'px';
+    vertical_axis_label_overlay.style.marginTop = -vertical_axis_label_overlay.getBoundingClientRect().height / 2 + 'px';
+
+    vertical_axis_label_overlay.style.top = min_tick_label_top + 'px';
 
 };
+
+
+//
+// WIDTH OF THE VERTICAL AXIS OVERLAY
+//
+
 
 function structureVerticalTickLabelGroup(vertical_tick_label_group, vertical_axis, cartesian_graph, horizontal_axes_height) {
 
     let vertical_tick_labels = vertical_tick_label_group.getElementsByClassName('vertical-tick-label-overlay');
 
-
-    //
-    //
-    console.log('ha');
-    console.log(horizontal_axes_height);
-    //
-    //
-
-
     for (var i = 0; i < vertical_tick_labels.length; i++) {
         let position_percentage = 1 - ((vertical_tick_labels[i].dataset.value - vertical_axis.dataset.lowerBound) / (vertical_axis.dataset.upperBound - vertical_axis.dataset.lowerBound));
         let position_absolute = position_percentage * (cartesian_graph.getAttribute('height') - horizontal_axes_height);
-        vertical_tick_labels[i].style.marginTop = -(vertical_tick_labels[i].getBoundingClientRect().height / 2);
-        vertical_tick_labels[i].style.top = position_absolute;
+        vertical_tick_labels[i].style.marginTop = -(vertical_tick_labels[i].getBoundingClientRect().height / 2) + 'px';
+        vertical_tick_labels[i].style.top = position_absolute + 'px';
     };
 };
 
@@ -491,7 +469,7 @@ function structureHorizontalAxis(cartesian_graph, axes, horizontal_axis, vertica
         let horizontal_tick_label_overlay_height = 0;
 
         if (i > 0){
-            horizontal_tick_label_groups_overlay[i].style.top = horizontal_tick_label_overlay_heights[i - 1];
+            horizontal_tick_label_groups_overlay[i].style.top = horizontal_tick_label_overlay_heights[i - 1] + 'px';
         };
 
         for (let j = 0; j < horizontal_tick_label_overlays.length; j++) {
@@ -531,7 +509,7 @@ function structureHorizontalAxis(cartesian_graph, axes, horizontal_axis, vertica
 
 
     let horizontal_axis_y_translation = cartesian_graph.getAttribute('height') - horizontal_axis_height;
-    horizontal_axis_overlay.style.top = horizontal_axis_y_translation;
+    horizontal_axis_overlay.style.top = horizontal_axis_y_translation + 'px';
 };
 
 
@@ -553,7 +531,7 @@ function structureCategoricalHorizontalTickLabels(cartesian_graph, axes, horizon
         let position_absolute = (i + 1) * width_per_category - width_per_category / 2
         let label_position_absolute = vertical_axes_width + position_absolute - horizontal_tick_labels[i].getBoundingClientRect().width / 2;
 
-        horizontal_tick_labels[i].style.left = label_position_absolute;
+        horizontal_tick_labels[i].style.left = label_position_absolute + 'px';
         horizontal_tick_labels[i].style.transform = null;
         horizontal_tick_labels[i].style.transformOrigin = null;
         horizontal_tick_labels[i].dataset.xTranslation = position_absolute;
@@ -568,7 +546,7 @@ function structureCategoricalHorizontalTickLabels(cartesian_graph, axes, horizon
             let position_absolute = (i + 1) * width_per_category - width_per_category / 2
             let label_position_absolute = vertical_axes_width + position_absolute;
 
-            horizontal_tick_labels[i].style.left = label_position_absolute;
+            horizontal_tick_labels[i].style.left = label_position_absolute + 'px';
             horizontal_tick_labels[i].style.transform = 'rotate(45deg)';
             horizontal_tick_labels[i].style.transformOrigin = 'top left';
         };
@@ -598,7 +576,7 @@ function structureDateTimeHorizontalTickLabels(cartesian_graph, axes, horizontal
         let position_percentage = (date - axis_lower_bound) / (axis_upper_bound - axis_lower_bound);
         let position_absolute = horizontal_axis_width * position_percentage + vertical_axes_width;
 
-        horizontal_tick_labels[i].style.left = position_absolute;
+        horizontal_tick_labels[i].style.left = position_absolute + 'px';
         horizontal_tick_labels[i].style.transform = null;
         horizontal_tick_labels[i].style.transformOrigin = null;
         horizontal_tick_labels[i].dataset.xTranslation = position_absolute;
@@ -613,7 +591,7 @@ function structureDateTimeHorizontalTickLabels(cartesian_graph, axes, horizontal
             let position_absolute = (i + 1) * width_per_category - width_per_category / 2
             let label_position_absolute = vertical_axes_width + position_absolute;
 
-            horizontal_tick_labels[i].style.left = label_position_absolute;
+            horizontal_tick_labels[i].style.left = label_position_absolute + 'px';
             horizontal_tick_labels[i].style.transform = 'rotate(45deg)';
             horizontal_tick_labels[i].style.transformOrigin = 'top left';
         };
@@ -638,27 +616,9 @@ function structureDateTimeHorizontalTickLabels(cartesian_graph, axes, horizontal
 
 function structureContent(visualization_id) {
 
-    //const visualizations = document.getElementsByClassName('visualization');
-
-
-    //
-    //
-    //console.log(visualizations);
-    //
-    //
-
+    const visualizations = document.getElementsByClassName('visualization');
 
     const visualization = document.getElementById(visualization_id);
-
-
-    //
-    //
-    //console.log(visualization_id);
-    //console.log(visualization);
-    //
-    //
-
-
     const cartesian_graphs = visualization.getElementsByClassName('cartesian-graph');
 
     for (let i = 0; i < cartesian_graphs.length; i++) {
@@ -678,12 +638,6 @@ function setEventListeners(visualization_id){
     });
 };
 
-
-//
-//
-//console.log(document.currentScript.dataset.visualizationId);
-//
-//
 
 structureContent(document.currentScript.dataset.visualizationId);
 setEventListeners(document.currentScript.dataset.visualizationId);

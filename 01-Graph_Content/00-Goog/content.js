@@ -92,33 +92,47 @@ const vi_id0 = {
                     horizontalBuffer: '2',
                     verticalAxisLabelDetails: {
                             string: 'Billion',
+                            fontSize: '10pt',
+                            fontFamily: 'Verdana',
                             position: 'top-tick'
                     },
                     verticalTickLabelGroupDetails: {
                         vtlg_id0: {
                             vl_id0: {
                                 value: '55000',
-                                string: '$55'
+                                string: '$55',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             vl_id1: {
                                 value: '50000',
-                                string: '50'
+                                string: '50',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             vl_id2: {
                                 value: '45000',
-                                string: '45'
+                                string: '45',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             vl_id3: {
                                 value: '40000',
-                                string: '40'
+                                string: '40',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             vl_id4: {
                                 value: '35000',
-                                string: '35'
+                                string: '35',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             vl_id5: {
                                 value: '30000',
-                                string: '30'
+                                string: '30',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             }
                         }
                     }
@@ -136,38 +150,54 @@ const vi_id0 = {
                         {
                             hl_id0: {
                                 value: '3/31/2021',
-                                string: 'Q1'
+                                string: 'Q1',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id1: {
                                 value: '3/31/2022',
-                                string: 'Q1'
+                                string: 'Q1',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id2: {
                                 value: '3/31/2023',
-                                string: 'Q1'
+                                string: 'Q1',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id3: {
                                 value: '3/31/2024',
                                 string: 'Q1',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             }
                         },
                         htlg_id1:
                         {
                             hl_id0: {
                                 value: '3/31/2021',
-                                string: '2021'
+                                string: '2021',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id1: {
                                 value: '3/31/2022',
-                                string: '2022'
+                                string: '2022',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id2: {
                                 value: '3/31/2023',
-                                string: '2023'
+                                string: '2023',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             },
                             hl_id3: {
                                 value: '3/31/2024',
                                 string: '2024',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
                             }
                         }
                     }
@@ -218,6 +248,8 @@ const vi_id0 = {
                     horizontalAxis: 'ha_id0',
                     verticalSeries: 'series_one',
                     horizontalSeries: 'series_zero',
+                    stroke: '#ED1C24',
+                    interpolation: 'linear'
                 }
             },
 
@@ -231,6 +263,8 @@ const vi_id0 = {
                         upperBound: '01/30/2025',
                         fill: '#D3D3D3',
                         string: 'ChatGPT Publicly Available',
+                        fontSize: '10pt',
+                        fontFamily: 'Verdana',
                         axisId: 'ha_id0'
                     }
                 }
