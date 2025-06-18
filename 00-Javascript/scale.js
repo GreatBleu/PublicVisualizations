@@ -9,8 +9,8 @@ function structureCartesianGraphOverlay(cartesian_graph, vertical_axes_width) {
 
     //
     //
-    console.log('boom');
-    console.log('deadbeef')
+    console.log('bam');
+    console.log('beef')
     console.log(cartesian_graph);
     console.log(cartesian_graph.getAttribute('width'));
     console.log(cartesianGraphOverlay.style.width);
