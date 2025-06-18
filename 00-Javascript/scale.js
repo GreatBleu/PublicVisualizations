@@ -4,16 +4,18 @@ function structureCartesianGraphOverlay(cartesian_graph, vertical_axes_width) {
 
     cartesianGraphOverlay.style.top = cartesian_graph.getBoundingClientRect().y + window.scrollY;
     cartesianGraphOverlay.style.left = cartesian_graph.getBoundingClientRect().x;
+    cartesianGraphOverlay.style.width = cartesian_graph.getAttribute('width');
+
 
     //
     //
     console.log('boom');
     console.log(cartesian_graph);
     console.log(cartesian_graph.getAttribute('width'));
+    console.log(cartesianGraphOverlay);
     //
     //
-
-    cartesianGraphOverlay.style.width = cartesian_graph.getAttribute('width');
+    
 
     let cartesianGraphBodyOverlay = cartesianGraphOverlay.getElementsByClassName('cartesian-graph-body-overlay')[0];
     structureCartesianGraphBodyOverlay(cartesian_graph, cartesianGraphBodyOverlay, vertical_axes_width);
