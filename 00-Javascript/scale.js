@@ -9,12 +9,12 @@ function structureCartesianGraphOverlay(cartesian_graph, vertical_axes_width) {
 
     //
     //
-    console.log('bam');
-    console.log('beef')
-    console.log(cartesian_graph);
-    console.log(cartesian_graph.getAttribute('width'));
+    //console.log('bam');
+    //console.log('beef')
+    //console.log(cartesian_graph);
+    //console.log(cartesian_graph.getAttribute('width'));
     //console.log(cartesianGraphOverlay.style.width);
-    console.log(cartesianGraphOverlay);
+    //console.log(cartesianGraphOverlay);
     //
     //
     
@@ -460,6 +460,15 @@ function structureVerticalAxis(cartesian_graph, axes, horizontal_axes, vertical_
 function structureVerticalTickLabelGroup(vertical_tick_label_group, vertical_axis, cartesian_graph, horizontal_axes_height) {
 
     let vertical_tick_labels = vertical_tick_label_group.getElementsByClassName('vertical-tick-label-overlay');
+
+
+    //
+    //
+    console.log('ha');
+    console.log(horizontal_axes_height);
+    //
+    //
+
 
     for (var i = 0; i < vertical_tick_labels.length; i++) {
         let position_percentage = 1 - ((vertical_tick_labels[i].dataset.value - vertical_axis.dataset.lowerBound) / (vertical_axis.dataset.upperBound - vertical_axis.dataset.lowerBound));
