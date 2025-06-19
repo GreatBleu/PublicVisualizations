@@ -164,7 +164,7 @@ function structureCartesianGraph(visualization_id, cartesian_graph) {
                 let category_width = (cartesian_graph.getAttribute('width') - vertical_axes_width) / horizontal_axis.dataset.categoryCount;
 
                 if (horizontal_tick_label_overlays[k].getBoundingClientRect().width > category_width) {
-                    horizontal_tick_label_overlays[k].style.transform = 'rotate(45deg)';
+                    horizontal_tick_label_overlays[k].style.transform = 'rotate(90deg)';
                     horizontal_tick_label_overlays[k].style.transformOrigin = 'top left';
                 } else {
                     horizontal_tick_label_overlays[k].style.transform = 'rotate(0deg)';
@@ -229,7 +229,7 @@ function structureCartesianGraphBody(visualization_id, cartesian_graph, cartesia
 
     let bar_groups = cartesian_graph_body.getElementsByClassName('bar-group');
     for (let bar_group_number = 0; bar_group_number < bar_groups.length; bar_group_number++) {
-        structureBarGroup(bar_groups[bar_group_number], cartesian_graph, vertical_axes_width);
+        structureBarGroup(bar_groups[bar_group_number], cartesian_graph, vertical_axes_width, bar_groups.length, bar_group_number);
     };
 
 
@@ -306,7 +306,18 @@ function structureLine(visualization_id, line, cartesian_graph, vertical_axes_wi
 
 
 
-function structureBarGroup(barGroup, cartesian_graph, vertical_axes_width) {
+function structureBarGroup(barGroup, cartesian_graph, vertical_axes_width, bar_group_count, bar_group_number) {
+
+
+    //
+    //
+    //console.log('bam bam');
+    //console.log(bar_group_count);
+    //console.log(bar_group_number);
+    //
+    //
+
+
     let bars = barGroup.getElementsByClassName('bar');
 
     let vertical_axis = document.getElementById(barGroup.dataset.verticalAxisId);
@@ -317,28 +328,31 @@ function structureBarGroup(barGroup, cartesian_graph, vertical_axes_width) {
     //
 
 
-
-
-
     let horizontal_axis = document.getElementById(barGroup.dataset.horizontalAxisId);
 
+
+
     let category_width = (cartesian_graph.getAttribute('width') - vertical_axes_width) / horizontal_axis.dataset.categoryCount;
+    let group_width = category_width * parseFloat(barGroup.dataset.widthPercentage);
+
+
+    //let group_left_offset = group_width * bar_group_number;
 
 
     for (let bar_number = 0; bar_number < bars.length; bar_number++) {
-        structureBar(bars[bar_number], vertical_axis, horizontal_axis, cartesian_graph, category_width, bar_bottom_height_adjustment);
+        structureBar(bars[bar_number], vertical_axis, horizontal_axis, cartesian_graph, group_width, category_width, bar_bottom_height_adjustment, bar_group_count, bar_group_number);
     };
 
 };
 
 
-function structureBar(bar, vertical_axis, horizontal_axis, cartesian_graph, category_width, bar_bottom_height_adjustment) {
+function structureBar(bar, vertical_axis, horizontal_axis, cartesian_graph, group_width, category_width, bar_bottom_height_adjustment, bar_group_count, bar_group_number) {
     let horizontal_tick_label = document.querySelectorAll(`[data-value="${bar.dataset.horizontalValue}"]`)[0];
-    let bar_center_x_position = horizontal_tick_label.dataset.xTranslation;
+    let bar_center_x_position = parseFloat(horizontal_tick_label.dataset.xTranslation);
 
-
-    let bar_width = category_width * bar.dataset.widthPercentage;
-    let bar_x_position = bar_center_x_position - .5 * bar_width;
+    let bar_width = group_width / bar_group_count;
+    
+    let bar_x_position = bar_center_x_position - .5 * group_width + bar_group_number * bar_width;
 
     let cartesian_graph_body_area = cartesian_graph.getElementsByClassName('cartesian-graph-body')[0].getElementsByClassName('cartesian-graph-body-area')[0];
 
@@ -372,7 +386,7 @@ function structureHorizontalGridLine(horizontalGridLine, verticalAxis, cartesian
     horizontalGridLine.setAttribute('y1', position_absolute);
     horizontalGridLine.setAttribute('y2', position_absolute);
 
-    if (parseFloat((cartesian_graph.getAttribute('height') - position_absolute - horizontal_axes_height).toFixed(4)) === vertical_axis_label_top) {
+    if (parseFloat((cartesian_graph.getAttribute('height') - position_absolute - horizontal_axes_height).toFixed(4)) === parseFloat(vertical_axis_label_top.toFixed(4))) {
         horizontalGridLine.setAttribute('x1', vertical_axis_label_width);
     } else {
         horizontalGridLine.setAttribute('x1', 0);
@@ -477,7 +491,7 @@ function structureHorizontalAxis(cartesian_graph, axes, horizontal_axis, vertica
             let category_width = (cartesian_graph.getAttribute('width') - vertical_axes_width) / horizontal_axis.dataset.categoryCount;
 
             if (horizontal_tick_label_overlays[j].getBoundingClientRect().width > category_width) {
-                horizontal_tick_label_overlays[j].style.transform = 'rotate(45deg)';
+                horizontal_tick_label_overlays[j].style.transform = 'rotate(90deg)';
                 horizontal_tick_label_overlays[j].style.transformOrigin = 'top left';
             } else {
                 horizontal_tick_label_overlays[j].style.transform = 'rotate(0deg)';
@@ -547,7 +561,7 @@ function structureCategoricalHorizontalTickLabels(cartesian_graph, axes, horizon
             let label_position_absolute = vertical_axes_width + position_absolute;
 
             horizontal_tick_labels[i].style.left = label_position_absolute + 'px';
-            horizontal_tick_labels[i].style.transform = 'rotate(45deg)';
+            horizontal_tick_labels[i].style.transform = 'rotate(90deg)';
             horizontal_tick_labels[i].style.transformOrigin = 'top left';
         };
     };
@@ -592,7 +606,7 @@ function structureDateTimeHorizontalTickLabels(cartesian_graph, axes, horizontal
             let label_position_absolute = vertical_axes_width + position_absolute;
 
             horizontal_tick_labels[i].style.left = label_position_absolute + 'px';
-            horizontal_tick_labels[i].style.transform = 'rotate(45deg)';
+            horizontal_tick_labels[i].style.transform = 'rotate(90deg)';
             horizontal_tick_labels[i].style.transformOrigin = 'top left';
         };
     };
