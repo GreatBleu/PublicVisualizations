@@ -278,7 +278,7 @@ const vi_id1 = {
                         upperBound: '1920',
                         fill: '#D3D3D3',
                         string: 'WWI',
-                        fontSize: '8pt',
+                        fontSize: '10pt',
                         fontFamily: 'Verdana',
                         axisId: 'ha_id0'
                     },
@@ -287,7 +287,7 @@ const vi_id1 = {
                         upperBound: '1948',
                         fill: '#D3D3D3',
                         string: 'WWII',
-                        fontSize: '8pt',
+                        fontSize: '10pt',
                         fontFamily: 'Verdana',
                         axisId: 'ha_id0'
                     },
@@ -296,7 +296,7 @@ const vi_id1 = {
                         upperBound: '2024',
                         fill: '#D3D3D3',
                         string: 'Approx. 10% improvement',
-                        fontSize: '8pt',
+                        fontSize: '10pt',
                         fontFamily: 'Verdana',
                         axisId: 'ha_id0'
                     }
