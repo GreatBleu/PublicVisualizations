@@ -36,7 +36,7 @@ const vi_id4 = {
 
     textBoxDetails: {
         tb_id0: {
-            string: "Yankees Players Using Torpedo Bats Have Improved Their Slugging Percentage by 9% This Year on Average",
+            string: "Yankees Using Torpedo Bats Have Improved Slugging Percentage by 9% On Avg.",
             color: 'rgb(0, 0, 0)',
             fontFamily: 'Verdana',
             textAlign: 'left',
@@ -224,34 +224,7 @@ const vi_id4 = {
                     width_percentage: .7,
                     fill: '#98a6ae',
                     stroke: '#98a6ae',
-                    stroke_width: '5',
-                    // barDetails: {
-                    //     bar_id0: {
-                    //         horizontal_value: 'Jazz Chisholm Jr.',
-                    //         vertical_value: .436,
-                    //         dashed: false
-                    //     },
-                    //     bar_id1: {
-                    //         horizontal_value: 'Cody Bellinger',
-                    //         vertical_value: .426,
-                    //         dashed: false
-                    //     },
-                    //     bar_id2: {
-                    //         horizontal_value: 'Paul Goldschmidt',
-                    //         vertical_value: .414,
-                    //         dashed: false
-                    //     },
-                    //     bar_id3: {
-                    //         horizontal_value: 'Austin Wells',
-                    //         vertical_value: .395,
-                    //         dashed: false
-                    //     },
-                    //     bar_id4: {
-                    //         horizontal_value: 'Anthony Volpe',
-                    //         vertical_value: .364,
-                    //         dashed: false
-                    //     }
-                    // }
+                    stroke_width: '5'
                 },
                 bg_id1: {
                     vertical_axis: 'va_id0',
