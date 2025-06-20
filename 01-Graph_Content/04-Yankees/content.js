@@ -1,28 +1,34 @@
-const vi_id2 = {
+const vi_id4 = {
     data: {
         series: {
             series_zero: {
                 type: 'string',
                 observations: {
-                    ob_id0: 'Cowboys',
-                    ob_id1: 'Giants',
-                    ob_id2: 'Bears',
-                    ob_id3: 'No Thanksgiving Cowboys',
-                    ob_id7: 'Titans',
-                    ob_id8: 'Panthers',
-                    ob_id9: 'Jaguars'
+                    ob_id0: 'Jazz Chisholm Jr.',
+                    ob_id1: 'Cody Bellinger',
+                    ob_id2: 'Paul Goldschmidt',
+                    ob_id3: 'Austin Wells',
+                    ob_id4: 'Anthony Volpe'
                 }
             },
             series_one: {
                 type: 'float',
                 observations: {
-                    ob_id0: 0.698924731182796,
-                    ob_id1: 0.666666666666667,
-                    ob_id2: 0.650793650793651,
-                    ob_id3: 0.591397849,
-                    ob_id7: 0.294871794871795,
-                    ob_id8: 0.264705882352941,
-                    ob_id9: 0.218181818181818
+                    ob_id0: .436,
+                    ob_id1: .426,
+                    ob_id2: .414,
+                    ob_id3: .395,
+                    ob_id4: .364,
+                }
+            },
+            series_two: {
+                type: 'float',
+                observations: {
+                    ob_id0: .461,
+                    ob_id1: .447,
+                    ob_id2: .454,
+                    ob_id3: .447,
+                    ob_id4: .414,
                 }
             }
         }
@@ -30,7 +36,7 @@ const vi_id2 = {
 
     textBoxDetails: {
         tb_id0: {
-            string: 'The Cowboys are King of the Undeserved Prime Time Game',
+            string: "Yankees Players Using Torpedo Bats Have Improved Their Slugging Percentage by 9% This Year on Average",
             color: 'rgb(0, 0, 0)',
             fontFamily: 'Verdana',
             textAlign: 'left',
@@ -38,15 +44,15 @@ const vi_id2 = {
             fontWeight: '700'
         },
         tb_id1: {
-            string: 'Average number of prime time games scheduled per prior year win (2016 - 2025 seasons)',
+            string: "Slugging percentage in <span style='font-weight:bold; color:#98a6ae;'>2024</span> and <span style='font-weight:bold; color:#0C2340;'>2025</span> regular seasons",
             color: 'rgb(0, 0, 0)',
             fontFamily: 'Verdana',
             textAlign: 'left',
             fontSize: '16pt',
             fontWeight: '300'
         },
-        tb_id2: {
-            string: 'Note: international games are not counted as prime time | 2025 Week 18 schedule yet to be finalized',
+        tb_id2:{
+            string: 'Note: 2025 regular season data is through 6/19/2025',
             color: 'rgb(0, 0, 0)',
             fontFamily: 'Verdana',
             textAlign: 'left',
@@ -54,7 +60,7 @@ const vi_id2 = {
             fontWeight: '300'
         },
         tb_id3: {
-            string: 'Source: pro-football-reference.com',
+            string: 'Source: FOXSports.com and Baseball-Reference.com',
             color: 'rgb(0, 0, 0)',
             fontFamily: 'Verdana',
             textAlign: 'left',
@@ -62,7 +68,7 @@ const vi_id2 = {
             fontWeight: '300'
         },
         tb_id4: {
-            string: 'greatbleu.com',
+            string: 'GreatBleu.com',
             color: 'rgb(0, 0, 0)',
             fontFamily: 'Verdana',
             textAlign: 'right',
@@ -79,10 +85,10 @@ const vi_id2 = {
                     type: 'float',
                     chartAreaMargin: '5',
                     lowerBound: '0',
-                    upperBound: '.85',
+                    upperBound: '.52',
                     horizontalBuffer: '2',
                     verticalAxisLabelDetails: {
-                        string: 'prime time games / prior year win',
+                        string: 'slugging percentage',
                         fontSize: '10pt',
                         fontFamily: 'Verdana',
                         position: 'top-tick'
@@ -90,30 +96,36 @@ const vi_id2 = {
                     verticalTickLabelGroupDetails: {
                         vtlg_id0: {
                             vl_id0: {
-                                value: '.8',
-                                string: '.8',
+                                value: '.5',
+                                string: '.500',
                                 fontSize: '10pt',
                                 fontFamily: 'Verdana'
                             },
                             vl_id1: {
-                                value: '.6',
-                                string: '.6',
+                                value: '.4',
+                                string: '.400',
                                 fontSize: '10pt',
                                 fontFamily: 'Verdana'
                             },
                             vl_id2: {
-                                value: '.4',
-                                string: '.4',
+                                value: '.3',
+                                string: '.300',
                                 fontSize: '10pt',
                                 fontFamily: 'Verdana'
                             },
                             vl_id4: {
                                 value: '.2',
-                                string: '.2',
+                                string: '.200',
                                 fontSize: '10pt',
                                 fontFamily: 'Verdana'
                             },
                             vl_id5: {
+                                value: '.1',
+                                string: '.100',
+                                fontSize: '10pt',
+                                fontFamily: 'Verdana'
+                            },
+                            vl_id6: {
                                 value: '0',
                                 string: '0',
                                 fontSize: '10pt',
@@ -127,50 +139,38 @@ const vi_id2 = {
                 ha_id0: {
                     type: 'categorical',
                     chartAreaMargin: '5',
-                    category_count: '7',
+                    category_count: '5',
                     verticalBuffer: '5',
                     horizontalTickLabelGroupDetails: {
                         htlg_id0:
                         {
                             hl_id0: {
-                                value: 'Cowboys',
-                                string: 'Cowboys',
+                                value: 'Jazz Chisholm Jr.',
+                                string: 'Chisholm Jr.',
                                 fontSize: '10pt',
                                 fontFamily: 'Verdana'
                             },
                             hl_id1: {
-                                value: 'Giants',
-                                string: 'Giants',
+                                value: 'Cody Bellinger',
+                                string: 'Bellinger',
                                 fontSize: '10pt',
                                 fontFamily: 'Verdana'
                             },
                             hl_id2: {
-                                value: 'Bears',
-                                string: 'Bears',
+                                value: 'Paul Goldschmidt',
+                                string: 'Goldschmidt',
                                 fontSize: '10pt',
                                 fontFamily: 'Verdana'
                             },
                             hl_id3: {
-                                value: 'No Thanksgiving Cowboys',
-                                string: 'Cowboys*',
+                                value: 'Austin Wells',
+                                string: 'Wells',
                                 fontSize: '10pt',
                                 fontFamily: 'Verdana'
                             },
-                            hl_id7: {
-                                value: 'Titans',
-                                string: 'Titans',
-                                fontSize: '10pt',
-                                fontFamily: 'Verdana'
-                            },
-                            hl_id8: {
-                                value: 'Panthers',
-                                string: 'Panthers',
-                                fontSize: '10pt',
-                                fontFamily: 'Verdana'
-                            },
-                            hl_id9: {
-                                value: 'Jaguars',
-                                string: 'Jaguars',
+                            hl_id4: {
+                                value: 'Anthony Volpe',
+                                string: 'Volpe',
                                 fontSize: '10pt',
                                 fontFamily: 'Verdana'
                             }
@@ -188,22 +188,27 @@ const vi_id2 = {
                             strokeWidth: '1'
                         },
                         hgl_id1: {
-                            value: '.2',
+                            value: '.1',
                             stroke: 'gray',
                             strokeWidth: '1'
                         },
                         hgl_id2: {
-                            value: '.4',
+                            value: '.2',
                             stroke: 'gray',
                             strokeWidth: '1'
                         },
                         hgl_id3: {
-                            value: '.6',
+                            value: '.3',
                             stroke: 'gray',
                             strokeWidth: '1'
                         },
                         hgl_id4: {
-                            value: '.8',
+                            value: '.4',
+                            stroke: 'gray',
+                            strokeWidth: '1'
+                        },
+                        hgl_id5: {
+                            value: '.5',
                             stroke: 'gray',
                             strokeWidth: '1'
                         }
@@ -214,52 +219,82 @@ const vi_id2 = {
                 bg_id0: {
                     vertical_axis: 'va_id0',
                     horizontal_axis: 'ha_id0',
-                    independentSeries: 'series_zero',
                     dependentSeries: 'series_one',
-                    fill: '#D3D3D3',
-                    stroke: '#D3D3D3',
+                    independentSeries: 'series_zero',
+                    width_percentage: .7,
+                    fill: '#98a6ae',
+                    stroke: '#98a6ae',
                     stroke_width: '5',
-                    stroke_style: 'solid',
-                    width_percentage: .9,
-                    barDetails: {
-                        ob_id0: {
-                            fill: '#041E42',
-                            stroke: '#041E42'
-                        },
-                        ob_id3: {
-                            fill: '#FFFFFF',
-                            stroke: '#041E42',
-                            stroke_style: 'dashed'
-                        }
-                    }
+                    // barDetails: {
+                    //     bar_id0: {
+                    //         horizontal_value: 'Jazz Chisholm Jr.',
+                    //         vertical_value: .436,
+                    //         dashed: false
+                    //     },
+                    //     bar_id1: {
+                    //         horizontal_value: 'Cody Bellinger',
+                    //         vertical_value: .426,
+                    //         dashed: false
+                    //     },
+                    //     bar_id2: {
+                    //         horizontal_value: 'Paul Goldschmidt',
+                    //         vertical_value: .414,
+                    //         dashed: false
+                    //     },
+                    //     bar_id3: {
+                    //         horizontal_value: 'Austin Wells',
+                    //         vertical_value: .395,
+                    //         dashed: false
+                    //     },
+                    //     bar_id4: {
+                    //         horizontal_value: 'Anthony Volpe',
+                    //         vertical_value: .364,
+                    //         dashed: false
+                    //     }
+                    // }
+                },
+                bg_id1: {
+                    vertical_axis: 'va_id0',
+                    horizontal_axis: 'ha_id0',
+                    dependentSeries: 'series_two',
+                    independentSeries: 'series_zero',
+                    width_percentage: .7,
+                    fill: '#0C2340',
+                    stroke: '#0C2340',
+                    stroke_width: '5',
+                    // barDetails: {
+                    //     bar_id10: {
+                    //         horizontal_value: 'Jazz Chisholm Jr.',
+                    //         vertical_value: .461,
+                    //         dashed: false
+                    //     },
+                    //     bar_id11: {
+                    //         horizontal_value: 'Cody Bellinger',
+                    //         vertical_value: .447,
+                    //         dashed: false
+                    //     },
+                    //     bar_id12: {
+                    //         horizontal_value: 'Paul Goldschmidt',
+                    //         vertical_value: .454,
+                    //         dashed: false
+                    //     },
+                    //     bar_id13: {
+                    //         horizontal_value: 'Austin Wells',
+                    //         vertical_value: .447,
+                    //         dashed: false
+                    //     },
+                    //     bar_id14: {
+                    //         horizontal_value: 'Anthony Volpe',
+                    //         vertical_value: .414,
+                    //         dashed: false
+                    //     }
+                    // }
                 }
             },
             annotationDetails: {
                 pointAnnotationDetails: {
-                    pa_id0: {
-                        string: "*If the Cowboys didn't play on Thanksgiving they would still be third among the NFL",
-                        fontSize: '10pt',
-                        fontFamily: 'Verdana',
-                        verticalBounds: {
-                            lowerBound: .3,
-                            upperBound: .938
-                        },
-                        horizontalBounds: {
-                            lowerBound: .65,
-                            upperBound: 1
-                        },
-                        verticalAxis: 'va_id0',
-                        horizontalAxis: 'ha_id0',
-                        horizontalValue: 'No Thanksgiving Cowboys',
-                        verticalValue: 0.591397849,
-                        tailBuffer: 3,
-                        headBuffer: 3,
-                        markerRefX: 5,
-                        calloutAttaches: {
-                            verticalPosition: .8,
-                            horizontalPosition: 0
-                        }
-                    }
+                },
+                timeSpanAnnotationDetails: {
                 }
             }
         }
@@ -276,7 +311,7 @@ const vi_id2 = {
             re_id2: { type: 'cartesian_graph', id: 'cg_id0', width: '100%' }
         },
         rw_id3: {
-            re_id3: { type: 'textbox', id: 'tb_id2', width: '100%' }
+            re_id3: { type: 'textbox', id: 'tb_id2'}
         },
         rw_id4: {
             re_id4: { type: 'textbox', id: 'tb_id3' },
