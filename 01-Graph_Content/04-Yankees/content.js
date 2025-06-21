@@ -235,33 +235,6 @@ const vi_id4 = {
                     fill: '#0C2340',
                     stroke: '#0C2340',
                     stroke_width: '5',
-                    // barDetails: {
-                    //     bar_id10: {
-                    //         horizontal_value: 'Jazz Chisholm Jr.',
-                    //         vertical_value: .461,
-                    //         dashed: false
-                    //     },
-                    //     bar_id11: {
-                    //         horizontal_value: 'Cody Bellinger',
-                    //         vertical_value: .447,
-                    //         dashed: false
-                    //     },
-                    //     bar_id12: {
-                    //         horizontal_value: 'Paul Goldschmidt',
-                    //         vertical_value: .454,
-                    //         dashed: false
-                    //     },
-                    //     bar_id13: {
-                    //         horizontal_value: 'Austin Wells',
-                    //         vertical_value: .447,
-                    //         dashed: false
-                    //     },
-                    //     bar_id14: {
-                    //         horizontal_value: 'Anthony Volpe',
-                    //         vertical_value: .414,
-                    //         dashed: false
-                    //     }
-                    // }
                 }
             },
             annotationDetails: {

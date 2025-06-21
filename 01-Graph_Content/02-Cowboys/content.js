@@ -62,7 +62,7 @@ const vi_id2 = {
             fontWeight: '300'
         },
         tb_id4: {
-            string: 'greatbleu.com',
+            string: 'GreatBleu.com',
             color: 'rgb(0, 0, 0)',
             fontFamily: 'Verdana',
             textAlign: 'right',
