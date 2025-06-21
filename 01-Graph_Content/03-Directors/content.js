@@ -256,176 +256,22 @@ const vi_id3 = {
                 bg_id0: {
                     vertical_axis: 'va_id0',
                     horizontal_axis: 'ha_id0',
+                    dependentSeries: 'series_one',
+                    independentSeries: 'series_zero',
                     width_percentage: .7,
-                    barDetails: {
-                        bar_id0: {
-                            fill: '#7eb0d5',
-                            stroke: '#7eb0d5',
-                            stroke_width: '5',
-                            horizontal_value: 'Christopher Nolan',
-                            vertical_value: 8.24,
-                            dashed: false
-                        },
-                        bar_id1: {
-                            fill: '#7eb0d5',
-                            stroke: '#7eb0d5',
-                            stroke_width: '5',
-                            horizontal_value: 'David Fincher',
-                            vertical_value: 7.75,
-                            dashed: false
-                        },
-                        bar_id2: {
-                            fill: '#7eb0d5',
-                            stroke: '#7eb0d5',
-                            stroke_width: '5',
-                            horizontal_value: 'Stanley Kubrick',
-                            vertical_value: 7.64,
-                            dashed: false
-                        },
-                        bar_id3: {
-                            fill: '#7eb0d5',
-                            stroke: '#7eb0d5',
-                            stroke_width: '5',
-                            horizontal_value: 'Steven Spielberg',
-                            vertical_value: 7.56,
-                            dashed: false
-                        },
-                        bar_id4: {
-                            fill: '#7eb0d5',
-                            stroke: '#7eb0d5',
-                            stroke_width: '5',
-                            horizontal_value: 'Wes Anderson',
-                            vertical_value: 7.52,
-                            dashed: false
-                        },
-                        bar_id5: {
-                            fill: '#7eb0d5',
-                            stroke: '#7eb0d5',
-                            stroke_width: '5',
-                            horizontal_value: 'The Coen Brothers',
-                            vertical_value: 7.50,
-                            dashed: false
-                        },
-                        bar_id6: {
-                            fill: '#7eb0d5',
-                            stroke: '#7eb0d5',
-                            stroke_width: '5',
-                            horizontal_value: 'Francis Ford Coppola',
-                            vertical_value: 7.24,
-                            dashed: false
-                        },
-                        bar_id7: {
-                            fill: '#7eb0d5',
-                            stroke: '#7eb0d5',
-                            stroke_width: '5',
-                            horizontal_value: 'Martin Scorsese',
-                            vertical_value: 7.23,
-                            dashed: false
-                        },
-                        bar_id8: {
-                            fill: '#7eb0d5',
-                            stroke: '#7eb0d5',
-                            stroke_width: '5',
-                            horizontal_value: 'Tim Burton',
-                            vertical_value: 7.22,
-                            dashed: false
-                        },
-                        bar_id9: {
-                            fill: '#7eb0d5',
-                            stroke: '#7eb0d5',
-                            stroke_width: '5',
-                            horizontal_value: 'Quentin Tarantino',
-                            vertical_value: 8.01,
-                            dashed: false
-                        }
-                    }
+                    fill: '#7eb0d5',
+                    stroke: '#7eb0d5',
+                    stroke_width: '5'
                 },
                 bg_id1: {
                     vertical_axis: 'va_id0',
                     horizontal_axis: 'ha_id0',
+                    dependentSeries: 'series_two',
+                    independentSeries: 'series_zero',
                     width_percentage: .7,
-                    barDetails: {
-                        bar_id10: {
-                            fill: '#8bd3c7',
-                            stroke: '#8bd3c7',
-                            stroke_width: '5',
-                            horizontal_value: 'Christopher Nolan',
-                            vertical_value: 7.80,
-                            dashed: false
-                        },
-                        bar_id11: {
-                            fill: '#8bd3c7',
-                            stroke: '#8bd3c7',
-                            stroke_width: '5',
-                            horizontal_value: 'David Fincher',
-                            vertical_value: 6.75,
-                            dashed: false
-                        },
-                        bar_id12: {
-                            fill: '#8bd3c7',
-                            stroke: '#8bd3c7',
-                            stroke_width: '5',
-                            horizontal_value: 'Stanley Kubrick',
-                            vertical_value: 8.03,
-                            dashed: false
-                        },
-                        bar_id13: {
-                            fill: '#8bd3c7',
-                            stroke: '#8bd3c7',
-                            stroke_width: '5',
-                            horizontal_value: 'Steven Spielberg',
-                            vertical_value: 7.32,
-                            dashed: false
-                        },
-                        bar_id14: {
-                            fill: '#8bd3c7',
-                            stroke: '#8bd3c7',
-                            stroke_width: '5',
-                            horizontal_value: 'Wes Anderson',
-                            vertical_value: 6.40,
-                            dashed: false
-                        },
-                        bar_id15: {
-                            fill: '#8bd3c7',
-                            stroke: '#8bd3c7',
-                            stroke_width: '5',
-                            horizontal_value: 'The Coen Brothers',
-                            vertical_value: 7.11,
-                            dashed: false
-                        },
-                        bar_id16: {
-                            fill: '#8bd3c7',
-                            stroke: '#8bd3c7',
-                            stroke_width: '5',
-                            horizontal_value: 'Francis Ford Coppola',
-                            vertical_value: 6.44,
-                            dashed: false
-                        },
-                        bar_id17: {
-                            fill: '#8bd3c7',
-                            stroke: '#8bd3c7',
-                            stroke_width: '5',
-                            horizontal_value: 'Martin Scorsese',
-                            vertical_value: 7.68,
-                            dashed: false
-                        },
-                        bar_id18: {
-                            fill: '#8bd3c7',
-                            stroke: '#8bd3c7',
-                            stroke_width: '5',
-                            horizontal_value: 'Tim Burton',
-                            vertical_value: 6.74,
-                            dashed: false
-                        },
-                        bar_id19: {
-                            fill: '#8bd3c7',
-                            stroke: '#8bd3c7',
-                            stroke_width: '5',
-                            horizontal_value: 'Quentin Tarantino',
-                            vertical_value: null,
-                            dashed: false
-                        }
-                    }
+                    fill: '#8bd3c7',
+                    stroke: '#8bd3c7',
+                    stroke_width: '5'
                 }
             },
             annotationDetails: {
