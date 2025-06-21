@@ -246,13 +246,6 @@ function structureCartesianGraphBody(visualization_id, cartesian_graph, cartesia
 //
 function structureLine(visualization_id, line, cartesian_graph, vertical_axes_width, horizontal_axes_height){
 
-    //
-    //
-    //console.log(visualization_id);
-    //console.log(line);
-    //
-    //
-
     line.innerHTML = null;
 
     let horizontal_lower_bound = new Date(eval(visualization_id).cartesianGraphDetails[cartesian_graph.getAttribute('id')].horizontalAxesDetails[line.dataset.horizontalAxis].lowerBound);
@@ -306,19 +299,9 @@ function structureLine(visualization_id, line, cartesian_graph, vertical_axes_wi
 
 function structureBarGroup(barGroup, cartesian_graph, vertical_axes_width, bar_group_count, bar_group_number) {
 
-
-    //
-    //
-    //console.log('bam bam');
-    //console.log(bar_group_count);
-    //console.log(bar_group_number);
-    //
-    //
-
-
     let bars = barGroup.getElementsByClassName('bar');
 
-    let vertical_axis = document.getElementById(barGroup.dataset.verticalAxisId);
+    let vertical_axis = cartesian_graph.getElementById(barGroup.dataset.verticalAxisId);
 
     // See if there is a horizontal grid line equal to the lower bound of the vertical axis
     let grid_line = document.querySelectorAll(`[data-value="${vertical_axis.dataset.lowerBound}"]`)[0];
@@ -326,7 +309,7 @@ function structureBarGroup(barGroup, cartesian_graph, vertical_axes_width, bar_g
     //
 
 
-    let horizontal_axis = document.getElementById(barGroup.dataset.horizontalAxisId);
+    let horizontal_axis = cartesian_graph.getElementById(barGroup.dataset.horizontalAxisId);
 
 
 
@@ -391,15 +374,6 @@ function structureHorizontalGridLine(horizontalGridLine, verticalAxis, cartesian
 
     horizontalGridLine.setAttribute('y1', position_absolute);
     horizontalGridLine.setAttribute('y2', position_absolute);
-
-
-
-    //console.log(parseFloat((cartesian_graph.getAttribute('height') - position_absolute - horizontal_axes_height).toFixed(4)));
-    //console.log(parseFloat(vertical_axis_label_top.toFixed(4)));
-
-
-    //console.log(horizontalGridLine.dataset.value);
-
 
 
     if (parseFloat(horizontalGridLine.dataset.value) === max_tick_label_value){
